@@ -233,4 +233,21 @@ public class MainActivity extends Activity {
         }
     };
 
+    @Override
+    protected void onResume() {
+        mAd.resume(this);
+        super.onResume();
+    }
+
+    @Override
+    protected void onDestroy() {
+        mAd.pause(this);
+        super.onDestroy();
+    }
+
+    @Override
+    protected void onPause() {
+        mAd.destroy(this);
+        super.onPause();
+    }
 }
