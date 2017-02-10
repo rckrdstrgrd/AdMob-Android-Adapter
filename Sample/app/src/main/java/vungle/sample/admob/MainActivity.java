@@ -240,14 +240,14 @@ public class MainActivity extends Activity {
     }
 
     @Override
-    protected void onDestroy() {
+    protected void onPause() {
         mAd.pause(this);
-        super.onDestroy();
+        super.onPause();
     }
 
     @Override
-    protected void onPause() {
+    protected void onDestroy() {
         mAd.destroy(this);
-        super.onPause();
+        super.onDestroy();
     }
 }
